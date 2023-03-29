@@ -19,15 +19,14 @@ def create_sidebar(df):
     col1.image(image, width=70)
     col2.markdown("# Fome Zero")
 
-    st.sidebar.markdown("## Filtros")
 
     countries = st.sidebar.multiselect(
-        "Escolha os Paises que Deseja visualizar os Restaurantes",
+        "Choose the countries you want to view the restaurants",
         df.loc[:, "country"].unique().tolist(),
         default=["Brazil", "England", "Qatar", "South Africa", "Canada", "Australia"],
     )
 
-    st.sidebar.markdown("### Dados Tratados")
+    st.sidebar.markdown("### Processed data")
 
     processed_data = pd.read_csv("./data/processed/data.csv")
 
